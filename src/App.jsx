@@ -9,6 +9,8 @@ import ContactPage from "./Landing/ContactPage/ContactPage";
 
 import Analysis from "./Landing/FuturesPage/Analysis";
 import LongShort from "./Landing/FuturesPage/LongShort";
+import PriceVsOI from "./Landing/FuturesPage/PriceVsOI";
+
 import Oianalysis from "./Landing/OptionsPage/Oianalysis";
 import CallPutOi from "./Landing/OptionsPage/CallPutOi";
 import TreadingOistrik from "./Landing/OptionsPage/TreadingOistrik";
@@ -18,6 +20,10 @@ import ATMPremium from "./Landing/OptionsPage/ATMPremium";
 import PriceOI from "./Landing/OptionsPage/PriceOI";
 import LongShortData from "./Landing/OptionsPage/LongShortData";
 
+import StraddleStrangle from "./Landing/StrategyPage/StraddleStrangle";
+import MultipleStrikes from "./Landing/StrategyPage/MultipleStrikes";
+import StraddleSnapshot from "./Landing/StrategyPage/StraddleSnapshot";
+
 function App() {
   return (
     <BrowserRouter>
@@ -25,8 +31,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<ContactPage />} />
+
         <Route path="/futures-analysis" element={<Analysis />} />
         <Route path="/long-vs-short" element={<LongShort />} />
+        <Route path="//price-vs-oi" element={<PriceVsOI />} />
+
         <Route path="/oi-analysis" element={<Oianalysis />} />
         <Route path="/call-vs-put-oi" element={<CallPutOi />} />
         <Route path="/advanced-option-chain" element={<AdvancedOption />} />
@@ -35,6 +44,10 @@ function App() {
         <Route path="/atm-premium" element={<ATMPremium />} />
         <Route path="/price-vs-oi" element={<PriceOI />} />
         <Route path="/long-&-short" element={<LongShortData />} />
+
+        <Route path="/straddle-strangle" element={<StraddleStrangle />} />
+        <Route path="/multi-strike-straddle" element={<MultipleStrikes />} />
+        <Route path="/straddle-snapshot" element={<StraddleSnapshot />} />
       </Routes>
       <Footer />
     </BrowserRouter>

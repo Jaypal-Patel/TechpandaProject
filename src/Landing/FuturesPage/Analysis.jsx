@@ -106,14 +106,14 @@ function Analysis() {
   };
 
   return (
-    <div className="w-full h-full px-4 sm:px-6 md:px-6 lg:px-16 py-10 mt-[30px] md:mt-[80px]">
+    <div className="bg-stone-200 cw-full h-full px-4 sm:px-6 md:px-6 lg:px-16 py-10 mt-[30px] md:mt-[80px]">
       {/* Button Section */}
 
-      <div className="border shadow-lg p-3 md:p-6 lg:p-8 my-5 ">
+      <div className="bg-white border shadow-lg p-3 md:p-6 lg:p-8 my-5 ">
         <h2 className="text-2xl md:text-3xl font-bold mb-5">
           Futures OI Analysis
         </h2>
-        <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:w-[70%] lg:grid-cols-5 gap-2 md:gap-4">
+        <div className="border p-4 w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 md:gap-4 lg:pr-[30%]">
           {[
             { label: "Full Data", color: "bg-[#006DAF] " },
             { label: "Long Build", color: "bg-[#02B3A9] " },
@@ -133,7 +133,7 @@ function Analysis() {
       </div>
 
       {/* Data Section */}
-      <div className="w-full border shadow-lg p-3 md:p-6 lg:p-8 mt-8 overflow-x-auto">
+      <div className="bg-white w-full border shadow-lg p-3 md:p-6 lg:p-8 mt-8 overflow-x-auto">
         {/* Desktop View */}
         <table className="hidden lg:table border w-full border-collapse text-left">
           <thead>

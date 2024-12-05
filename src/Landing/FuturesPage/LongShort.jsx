@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 const data = [
   {
@@ -29,105 +29,135 @@ const data = [
 
 function LongShort() {
   return (
-    <div className="w-full p-4 md:mt-[80px] mt-[30px]">
-      <h2 className="text-2xl font-bold mb-4">
-        Futures Long vs Short Analysis
-      </h2>
+    <div className="bg-stone-200 w-full p-6 md:px-20 md:mt-[80px] mt-[30px] pb-10">
+      <div className=" bg-white border shadow-lg p-3 md:p-6 lg:p-8 my-5 ">
+        <h2 className="text-3xl font-bold mb-6 text-gray-800">
+          Futures Long vs Short Analysis
+        </h2>
 
-      {/* Filter Controls */}
-      <div className="flex flex-wrap gap-4 mb-6">
-        {/* Symbol Option */}
-        <div>
-          <label htmlFor="symbol" className="block font-medium">
-            Symbol
-          </label>
-          <select id="symbol" className="border px-4 py-2 rounded">
-            <option value="All">All</option>
-            <option value="NIFTY">NIFTY</option>
-            <option value="SUPREMEIND">SUPREMEIND</option>
-            <option value="CYIENT">CYIENT</option>
-          </select>
-        </div>
+        <div className="border p-4 flex gap-14">
+          {/* Symbol Option */}
+          <div>
+            <label
+              htmlFor="symbol"
+              className="block font-medium text-gray-700 mb-1"
+            >
+              Symbol
+            </label>
+            <select
+              id="symbol"
+              className="font-medium outline-none border-b-2 border-slate-300 px-4 py-2"
+            >
+              <option value="All">All</option>
+              <option value="NIFTY">NIFTY</option>
+              <option value="SUPREMEIND">SUPREMEIND</option>
+              <option value="CYIENT">CYIENT</option>
+            </select>
+          </div>
 
-        {/* Expiry Date Option*/}
-        <div>
-          <label htmlFor="expiry" className="block font-medium">
-            Expiry Date
-          </label>
-          <select id="expiry" className="border px-4 py-2 rounded">
-            <option value="20-08-2024">20-08-2024</option>
-            <option value="17-07-2024">17-07-2024</option>
-            <option value="24-04-2024">24-04-2024</option>
-            <option value="28-06-2024">28-06-2024</option>
-          </select>
-        </div>
+          {/* Expiry Date Option */}
+          <div>
+            <label
+              htmlFor="expiry"
+              className="block font-medium text-gray-700 mb-1"
+            >
+              Expiry Date
+            </label>
+            <select
+              id="expiry"
+              className="font-medium outline-none border-b-2 border-slate-300 px-4 py-2"
+            >
+              <option value="20-08-2024">20-08-2024</option>
+              <option value="17-07-2024">17-07-2024</option>
+              <option value="24-04-2024">24-04-2024</option>
+              <option value="28-06-2024">28-06-2024</option>
+            </select>
+          </div>
 
-        {/* Interval */}
-        <div>
-          <label htmlFor="interval" className="block font-medium">
-            Interval
-          </label>
-          <select id="expiry" className="border px-4 py-2 rounded">
-            <option value="5M">5M</option>
-            <option value="10M">10M</option>
-            <option value="15M">15M</option>
-            <option value="30M">30M</option>
-          </select>
-        </div>
+          {/* Interval */}
+          <div>
+            <label
+              htmlFor="interval"
+              className="block font-medium text-gray-700 mb-1"
+            >
+              Interval
+            </label>
+            <select
+              id="interval"
+              className="font-medium outline-none border-b-2 border-slate-300 px-4 py-2"
+            >
+              <option value="5M">5M</option>
+              <option value="10M">10M</option>
+              <option value="15M">15M</option>
+              <option value="30M">30M</option>
+            </select>
+          </div>
 
-        {/* Live Option */}
-        <div>
-          <label htmlFor="live" className="block font-medium">
-            Live
-          </label>
-          <input type="checkbox" id="live" className="w-4 h-4" />
-        </div>
+          {/* Live Option */}
+          <div className="flex flex-col items-center gap-2">
+            <label htmlFor="live" className="font-medium text-gray-700">
+              Live
+            </label>
+            <input
+              type="checkbox"
+              id="live"
+              className="w-5 h-5 mt-3 accent-blue-500 cursor-pointer"
+            />
+          </div>
 
-        {/* Historical Date */}
-        <div>
-          <label htmlFor="date" className="block font-medium">
-            Historical Date
-          </label>
-          <input type="date" id="date" className="border px-4 py-2 rounded" />
+          {/* Historical Date */}
+          <div>
+            <label
+              htmlFor="date"
+              className="block font-medium text-gray-700 mb-1"
+            >
+              Historical Date
+            </label>
+            <input
+              type="date"
+              id="date"
+              className="font-medium border-b-2 outline-none border-slate-300 px-4 py-2"
+            />
+          </div>
         </div>
       </div>
 
       {/* Data Table */}
-      <div className="mt-6 overflow-x-auto">
-        <table className="w-full border-collapse border text-left">
-          <thead>
+      <div className="bg-white w-full border shadow-lg p-3 md:p-6 lg:p-8 mt-8 overflow-x-auto">
+        <table className="w-full border text-left bg-white overflow-hidden">
+          <thead className=" text-black">
             <tr>
-              <th className="border px-4 py-2">Date</th>
-              <th className="border px-4 py-2">Time</th>
-              <th className="border px-4 py-2">Symbol</th>
-              <th className="border px-4 py-2">Last Price</th>
-              <th className="border px-4 py-2">Price Change</th>
-              <th className="border px-4 py-2">OI Change</th>
-              <th className="border px-4 py-2">Long vs Short</th>
+              <th className="border-b px-4 py-3">Date</th>
+              <th className="border-b px-4 py-3">Time</th>
+              <th className="border-b px-4 py-3">Symbol</th>
+              <th className="border-b px-4 py-3">Last Price</th>
+              <th className="border-b px-4 py-3">Price Change</th>
+              <th className="border-b px-4 py-3">OI Change</th>
+              <th className="border-b px-4 py-3">Long vs Short</th>
             </tr>
           </thead>
           <tbody>
             {data.map((item, index) => (
-              <tr key={index}>
-                <td className="border px-4 py-2">{item.Date}</td>
-                <td className="border px-4 py-2">{item.Time}</td>
-                <td className="border px-4 py-2">{item.Symbol}</td>
-                <td className="border px-4 py-2">{item.ltp}</td>
+              <tr key={index} className={`hover:bg-gray-100 `}>
+                <td className="border-b px-4 py-3">{item.Date}</td>
+                <td className="border-b px-4 py-3">{item.Time}</td>
+                <td className="border-b px-4 py-3">{item.Symbol}</td>
+                <td className="border-b px-4 py-3">{item.ltp}</td>
                 <td
-                  className={`border px-4 py-2 ${
-                    item.PriceChange > 0 ? "text-green-500" : "text-red-500"
+                  className={`border-b px-4 py-3 font-semibold ${
+                    item.PriceChange > 0 ? "text-green-600" : "text-red-600"
                   }`}
                 >
                   {item.PriceChange}
                 </td>
                 <td
-                  className={`border px-4 py-2 ${
-                    item.OIChange > 0 ? "text-green-500" : "text-red-500"
+                  className={`border-b px-4 py-3 font-semibold ${
+                    item.OIChange > 0 ? "text-green-600" : "text-red-600"
                   }`}
                 >
                   {item.OIChange}
                 </td>
-                <td className="border px-4 py-2">{item.type}</td>
+                <td className="border-b px-4 py-3">{item.type}</td>
               </tr>
             ))}
           </tbody>

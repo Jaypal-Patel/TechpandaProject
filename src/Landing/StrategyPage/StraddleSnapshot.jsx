@@ -16,12 +16,12 @@ const data = [
   { time: "10:00", "24650.00": 430, "24700.00": 450, "24750.00": 460 },
 ];
 
-function MultipleStrikes() {
+function StraddleSnapshot() {
   return (
     <div className="bg-stone-200 w-full p-6 md:px-20 md:mt-[80px] mt-[30px] pb-10">
       <div className="bg-white border shadow-lg p-3 md:p-6 lg:p-8 my-5">
         <h2 className="text-3xl font-bold mb-6 text-gray-800">
-          Multiple Strikes Straddle
+          Straddle Snapshot
         </h2>
 
         <div className="border p-4 flex gap-14">
@@ -63,54 +63,16 @@ function MultipleStrikes() {
             </select>
           </div>
 
-          {/* Strike Count 1 */}
+          {/* Strike Count */}
           <div>
             <label
-              htmlFor="strike1"
+              htmlFor="strike"
               className="block font-medium text-gray-700 mb-1"
             >
-              Strike 1
+              Strike Count
             </label>
             <select
-              id="strike1"
-              className="font-medium outline-none border-b-2 border-slate-300 px-4 py-2"
-            >
-              <option value="5M">5</option>
-              <option value="10M">10</option>
-              <option value="15M">15</option>
-              <option value="30M">30</option>
-            </select>
-          </div>
-
-          {/* Strike Count 2 */}
-          <div>
-            <label
-              htmlFor="strike2"
-              className="block font-medium text-gray-700 mb-1"
-            >
-              Strike 1
-            </label>
-            <select
-              id="strike2"
-              className="font-medium outline-none border-b-2 border-slate-300 px-4 py-2"
-            >
-              <option value="5M">5</option>
-              <option value="10M">10</option>
-              <option value="15M">15</option>
-              <option value="30M">30</option>
-            </select>
-          </div>
-
-          {/* Strike Count 3 */}
-          <div>
-            <label
-              htmlFor="strike3"
-              className="block font-medium text-gray-700 mb-1"
-            >
-              Strike 1
-            </label>
-            <select
-              id="strike3"
+              id="strike"
               className="font-medium outline-none border-b-2 border-slate-300 px-4 py-2"
             >
               <option value="5M">5</option>
@@ -171,4 +133,4 @@ function MultipleStrikes() {
   );
 }
 
-export default MultipleStrikes;
+export default StraddleSnapshot;
