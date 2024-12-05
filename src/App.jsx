@@ -8,7 +8,7 @@ import Home from "./Landing/HomePage/Home";
 import ContactPage from "./Landing/ContactPage/ContactPage";
 
 import Analysis from "./Landing/FuturesPage/Analysis";
-// import LongShort from "./Landing/FuturesPage/LongShort";
+import LongShort from "./Landing/FuturesPage/LongShort";
 // import Oianalysis from "./Landing/OptionsPage/Oianalysis";
 // import CallPutOi from "./Landing/OptionsPage/CallPutOi";
 // import TreadingOistrik from "./Landing/OptionsPage/TreadingOistrik";
@@ -16,7 +16,7 @@ import Analysis from "./Landing/FuturesPage/Analysis";
 // import OptionChain from "./Landing/OptionsPage/OptionChain";
 // import ATMPremium from "./Landing/OptionsPage/ATMPremium";
 // import PriceOI from "./Landing/OptionsPage/PriceOI";
-import LongShortData from "./Landing/OptionsPage/LongShortData";
+//import LongShortData from "./Landing/OptionsPage/LongShortData";
 
 function App() {
   return (
@@ -26,7 +26,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/futures-analysis" element={<Analysis />} />
-        {/* <Route path="/long-vs-short" element={<LongShort />} /> */}
+        <Route path="/long-vs-short" element={<LongShort />} />
         {/* <Route path="/oi-analysis" element={<Oianalysis />} />
         <Route path="/call-vs-put-oi" element={<CallPutOi />} />
         <Route path="/advanced-option-chain" element={<AdvancedOption />} />
@@ -34,7 +34,7 @@ function App() {
         <Route path="/put-call-ratio" element={<TreadingOistrik />} />
         <Route path="/atm-premium" element={<ATMPremium />} />
         <Route path="/price-vs-oi" element={<PriceOI />} /> */}
-        <Route path="/long-&-short" element={<LongShortData />} />
+        {/* <Route path="/long-&-short" element={<LongShortData />} /> */}
       </Routes>
       <Footer />
     </BrowserRouter>
