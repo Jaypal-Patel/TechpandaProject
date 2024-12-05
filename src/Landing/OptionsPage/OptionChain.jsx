@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CanvasJSReact } from "@canvasjs/charts";
+import CanvasJSReact from "@canvasjs/react-charts";
 
 const CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
