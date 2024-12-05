@@ -16,7 +16,7 @@ import Analysis from "./Landing/FuturesPage/Analysis";
 // import OptionChain from "./Landing/OptionsPage/OptionChain";
 // import ATMPremium from "./Landing/OptionsPage/ATMPremium";
 // import PriceOI from "./Landing/OptionsPage/PriceOI";
-// import LongShortData from "./Landing/OptionsPage/LongShortData";
+import LongShortData from "./Landing/OptionsPage/LongShortData";
 
 function App() {
   return (
@@ -33,8 +33,8 @@ function App() {
         <Route path="/option-chain" element={<OptionChain />} />
         <Route path="/put-call-ratio" element={<TreadingOistrik />} />
         <Route path="/atm-premium" element={<ATMPremium />} />
-        <Route path="/price-vs-oi" element={<PriceOI />} />
-        <Route path="/long-&-short" element={<LongShortData />} /> */}
+        <Route path="/price-vs-oi" element={<PriceOI />} /> */}
+        <Route path="/long-&-short" element={<LongShortData />} />
       </Routes>
       <Footer />
     </BrowserRouter>
