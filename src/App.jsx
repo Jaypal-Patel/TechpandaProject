@@ -24,6 +24,9 @@ import StraddleStrangle from "./Landing/StrategyPage/StraddleStrangle";
 import MultipleStrikes from "./Landing/StrategyPage/MultipleStrikes";
 import StraddleSnapshot from "./Landing/StrategyPage/StraddleSnapshot";
 
+import Login from "./Componet/Login";
+import SignUp from "./Componet/SignUp";
+
 function App() {
   return (
     <BrowserRouter>
@@ -34,7 +37,7 @@ function App() {
 
         <Route path="/futures-analysis" element={<Analysis />} />
         <Route path="/long-vs-short" element={<LongShort />} />
-        <Route path="//price-vs-oi" element={<PriceVsOI />} />
+        <Route path="/price-vs-oi" element={<PriceVsOI />} />
 
         <Route path="/oi-analysis" element={<Oianalysis />} />
         <Route path="/call-vs-put-oi" element={<CallPutOi />} />
@@ -48,6 +51,9 @@ function App() {
         <Route path="/straddle-strangle" element={<StraddleStrangle />} />
         <Route path="/multi-strike-straddle" element={<MultipleStrikes />} />
         <Route path="/straddle-snapshot" element={<StraddleSnapshot />} />
+
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
       </Routes>
       <Footer />
     </BrowserRouter>

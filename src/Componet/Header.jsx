@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { IoMenu, IoClose } from "react-icons/io5";
 
@@ -47,7 +47,7 @@ function Header() {
   return (
     <header className="relative">
       {/* Navbar */}
-      <div className="fixed top-0 right-0 left-0 w-full lg:h-[85px] md:h-[75px] bg-[#0D1B2A] text-white flex justify-between items-center md:px-16 lg:px-20 px-4 z-50">
+      <div className="fixed top-0 right-0 left-0 w-full h-[70px] lg:h-[85px] md:h-[75px] bg-[#0D1B2A] text-white flex justify-between items-center md:px-16 lg:px-20 px-4 z-50">
         <div className="flex items-center gap-24">
           <Link className="w-[250px] h-[55px]" to={"/"}>
             <img
@@ -106,7 +106,8 @@ function Header() {
             </Link>
             <Link>
               <div className="bg-[#005CE6] py-[8px] px-3 rounded-lg">
-                <button>Login</button>/<button>Sign Up</button>
+                <Link to={"/login"}>Login</Link>/
+                <Link to={"signup"}>Sign Up</Link>
               </div>
             </Link>
           </div>
@@ -136,7 +137,8 @@ function Header() {
           </Link>
           <Link>
             <div className="bg-[#005CE6] py-[8px] px-3 rounded-lg">
-              <button>Login</button>/<button>Sign Up</button>
+              <Link to={"/login"}>Login</Link>/
+              <Link to={"signup"}>Sign Up</Link>
             </div>
           </Link>
         </div>

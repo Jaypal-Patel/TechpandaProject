@@ -106,7 +106,7 @@ function Analysis() {
   };
 
   return (
-    <div className="bg-stone-200 cw-full h-full px-4 sm:px-6 md:px-6 lg:px-16 py-10 mt-[30px] md:mt-[80px]">
+    <div className="bg-gradient-to-r from-blue-50 to-blue-100 cw-full h-full px-4 sm:px-6 md:px-6 lg:px-16 py-10 mt-[30px] md:mt-[80px]">
       {/* Button Section */}
 
       <div className="bg-white border shadow-lg p-3 md:p-6 lg:p-8 my-5 ">

@@ -21,7 +21,7 @@ const data = [
 
 function PriceVsOI() {
   return (
-    <div className="bg-stone-200 w-full p-6 md:px-20 md:mt-[80px] mt-[30px] pb-10">
+    <div className="bg-gradient-to-r from-blue-50 to-blue-100 w-full p-6 md:px-20 md:mt-[80px] mt-[30px] pb-10">
       <div className="bg-white border shadow-lg p-3 md:p-6 lg:p-8 my-5">
         <h2 className="text-3xl font-bold mb-6 text-gray-800">
           Futures Price Vs OI
