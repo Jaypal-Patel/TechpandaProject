@@ -1,159 +1,136 @@
-import React, { useState } from "react";
-import CanvasJSReact from "@canvasjs/react-charts";
+import React from "react";
+import {
+  LineChart,
+  Line,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  Tooltip,
+  Legend,
+} from "recharts";
 
-const CanvasJSChart = CanvasJSReact.CanvasJSChart;
+const data = [
+  { time: "9:15", "24650.00": 400, "24700.00": 420, "24750.00": 440 },
+  { time: "9:30", "24650.00": 420, "24700.00": 430, "24750.00": 450 },
+  { time: "9:45", "24650.00": 450, "24700.00": 470, "24750.00": 480 },
+  { time: "10:00", "24650.00": 430, "24700.00": 450, "24750.00": 460 },
+];
 
-const PutCallRatio = () => {
-  const [symbol, setSymbol] = useState("NIFTY");
-  const [expiry, setExpiry] = useState("26/12/2024");
-  const [strikeCount, setStrikeCount] = useState(30);
-  const [duration, setDuration] = useState("Day");
-  const [live, setLive] = useState(true);
-  const [historicalDate, setHistoricalDate] = useState("2024-03-12");
-  //const [replay, setReplay] = useState(false);
-
-  const generateChartData = () => {
-    const dataPointsCE = Array.from({ length: strikeCount }, (_, i) => ({
-      label: (6200 + i * 200).toString(),
-      y: Math.floor(Math.random() * 100000),
-    }));
-
-    const dataPointsPE = Array.from({ length: strikeCount }, (_, i) => ({
-      label: (6200 + i * 200).toString(),
-      y: Math.floor(Math.random() * 80000),
-    }));
-
-    return {
-      animationEnabled: true,
-      title: {
-        text: `${symbol} Open Interest Analysis`,
-      },
-      axisX: {
-        title: "Strike Price",
-        labelFontColor: "#666",
-      },
-      axisY: {
-        title: "Open Interest",
-        labelFontColor: "#666",
-      },
-      data: [
-        {
-          type: "column",
-          name: "CE OI Change",
-          showInLegend: true,
-          color: "#26a69a",
-          dataPoints: dataPointsCE,
-        },
-        {
-          type: "column",
-          name: "PE OI Change",
-          showInLegend: true,
-          color: "#ef5350",
-          dataPoints: dataPointsPE,
-        },
-      ],
-    };
-  };
-
-  const chartData = generateChartData();
-
+function PutCallRatio() {
   return (
-    <div className="bg-gradient-to-r from-blue-50 to-blue-100 min-h-screen h-full pt-40">
-      {/* Controls */}
-      <div className="max-w-screen-xl mx-auto p-6 bg-white shadow-lg rounded-md border border-gray-200 mb-12">
-        <h2 className="text-xl sm:text-2xl font-semibold text-gray-700 mb-6 text-center">
-          Open Interest Analysis
+    <div className="bg-gradient-to-r from-blue-50 to-blue-100 w-full p-6 md:px-20 md:mt-[80px] mt-[30px] pb-10">
+      <div className="bg-white border shadow-lg p-3 md:p-6 lg:p-8 my-5">
+        <h2 className="text-3xl font-bold mb-6 text-gray-800">
+          Straddle Snapshot
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="flex flex-col">
-            <label className="text-sm sm:text-base font-medium text-gray-600 mb-2">
+        <div className="border p-4 flex gap-14">
+          {/* Symbol Option */}
+          <div>
+            <label
+              htmlFor="symbol"
+              className="block font-medium text-gray-700 mb-1"
+            >
               Symbol
             </label>
             <select
-              value={symbol}
-              onChange={(e) => setSymbol(e.target.value)}
-              className="w-full p-3 border rounded-md"
+              id="symbol"
+              className="font-medium outline-none border-b-2 border-slate-300 px-4 py-2"
             >
+              <option value="All">All</option>
               <option value="NIFTY">NIFTY</option>
-              <option value="BANKNIFTY">BANKNIFTY</option>
-              <option value="MINDCPNIFTY">MINDCPNIFTY</option>
+              <option value="SUPREMEIND">SUPREMEIND</option>
+              <option value="CYIENT">CYIENT</option>
             </select>
           </div>
 
-          <div className="flex flex-col">
-            <label className="text-sm sm:text-base font-medium text-gray-600 mb-2">
-              Expiry
+          {/* Expiry Date Option */}
+          <div>
+            <label
+              htmlFor="expiry"
+              className="block font-medium text-gray-700 mb-1"
+            >
+              Expiry Date
             </label>
             <select
-              value={expiry}
-              onChange={(e) => setExpiry(e.target.value)}
-              className="w-full p-3 border rounded-md"
+              id="expiry"
+              className="font-medium outline-none border-b-2 border-slate-300 px-4 py-2"
             >
-              <option value="26/12/2024">26/12/2024</option>
-              <option value="25/01/2025">25/01/2025</option>
+              <option value="20-08-2024">20-08-2024</option>
+              <option value="17-07-2024">17-07-2024</option>
+              <option value="24-04-2024">24-04-2024</option>
+              <option value="28-06-2024">28-06-2024</option>
             </select>
           </div>
 
-          <div className="flex flex-col">
-            <label className="text-sm sm:text-base font-medium text-gray-600 mb-2">
+          {/* Strike Count */}
+          <div>
+            <label
+              htmlFor="strike"
+              className="block font-medium text-gray-700 mb-1"
+            >
               Strike Count
             </label>
-            <input
-              type="number"
-              value={strikeCount}
-              onChange={(e) => setStrikeCount(Number(e.target.value))}
-              className="w-full p-3 border rounded-md"
-            />
-          </div>
-
-          <div className="flex flex-col">
-            <label className="text-sm sm:text-base font-medium text-gray-600 mb-2">
-              Duration
-            </label>
             <select
-              value={duration}
-              onChange={(e) => setDuration(e.target.value)}
-              className="w-full p-3 border rounded-md"
+              id="strike"
+              className="font-medium outline-none border-b-2 border-slate-300 px-4 py-2"
             >
-              <option value="Day">Day</option>
-              <option value="Week">Week</option>
-              <option value="Month">Month</option>
+              <option value="5M">5</option>
+              <option value="10M">10</option>
+              <option value="15M">15</option>
+              <option value="30M">30</option>
             </select>
           </div>
 
-          <div className="flex items-center">
-            <input
-              type="checkbox"
-              checked={live}
-              onChange={(e) => setLive(e.target.checked)}
-              className="h-5 w-5 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
-            />
-            <label className="ml-3 text-sm sm:text-base font-medium text-gray-600">
+          {/* Live Option */}
+          <div className="flex flex-col items-center gap-2">
+            <label htmlFor="live" className="font-medium text-gray-700">
               Live
             </label>
+            <input
+              type="checkbox"
+              id="live"
+              className="w-5 h-5 mt-3 accent-blue-500 cursor-pointer"
+            />
           </div>
 
-          <div className="flex flex-col">
-            <label className="text-sm sm:text-base font-medium text-gray-600 mb-2">
+          {/* Historical Date */}
+          <div>
+            <label
+              htmlFor="date"
+              className="block font-medium text-gray-700 mb-1"
+            >
               Historical Date
             </label>
             <input
               type="date"
-              value={historicalDate}
-              onChange={(e) => setHistoricalDate(e.target.value)}
-              className="w-full p-3 border rounded-md"
+              id="date"
+              className="font-medium border-b-2 outline-none border-slate-300 px-4 py-2"
             />
           </div>
         </div>
       </div>
 
-      {/* Chart */}
-      <div style={{ margin: "20px" }}>
-        <CanvasJSChart options={chartData} />
+      {/* Graph Section */}
+      <div className="bg-white w-full border shadow-lg p-3 md:p-6 lg:p-8 mt-8 overflow-x-auto flex justify-center">
+        <LineChart
+          width={800}
+          height={400}
+          data={data}
+          margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="time" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Line type="monotone" dataKey="24650.00" stroke="#8884d8" />
+          <Line type="monotone" dataKey="24700.00" stroke="#82ca9d" />
+          <Line type="monotone" dataKey="24750.00" stroke="#ff7300" />
+        </LineChart>
       </div>
     </div>
   );
-};
+}
 
 export default PutCallRatio;

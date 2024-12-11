@@ -16,6 +16,7 @@ import CallPutOi from "./Landing/OptionsPage/CallPutOi";
 import TreadingOistrik from "./Landing/OptionsPage/TreadingOistrik";
 import AdvancedOption from "./Landing/OptionsPage/AdvancedOption";
 import OptionChain from "./Landing/OptionsPage/OptionChain";
+import PutCallRatio from "./Landing/OptionsPage/PutCallRatio";
 import ATMPremium from "./Landing/OptionsPage/ATMPremium";
 import PriceOI from "./Landing/OptionsPage/PriceOI";
 import LongShortData from "./Landing/OptionsPage/LongShortData";
@@ -43,7 +44,8 @@ function App() {
         <Route path="/call-vs-put-oi" element={<CallPutOi />} />
         <Route path="/advanced-option-chain" element={<AdvancedOption />} />
         <Route path="/option-chain" element={<OptionChain />} />
-        <Route path="/put-call-ratio" element={<TreadingOistrik />} />
+        <Route path="/put-call-ratio" element={<PutCallRatio />} />
+        <Route path="/trending-strikes" element={<TreadingOistrik />} />
         <Route path="/atm-premium" element={<ATMPremium />} />
         <Route path="/price-vs-oi" element={<PriceOI />} />
         <Route path="/long-&-short" element={<LongShortData />} />

@@ -7,3 +7,23 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.slick-list {
+  margin: 0 -10px;
+}
+
+.slick-slider {
+  display: flex;
+  justify-content: center;
+}
+
+.slick-slide > div {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.slick-slide:hover > div {
+  transform: scale(1.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}

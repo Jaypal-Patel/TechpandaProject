@@ -3,14 +3,14 @@ import React from "react";
 function Contact() {
   return (
     <section className="bg-gradient-to-r from-blue-50 to-blue-100 py-12 px-6 md:px-12 lg:px-20">
-      <div className="max-w-5xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-8">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-gray-800 mb-14">
           Get in <span className="text-yellow-400">Touch</span>
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Contact Form */}
-          <form className="bg-white p-4 md:p-8 rounded-lg shadow-lg">
+          <form className=" bg-white p-4 md:p-8 lg:p-12 rounded-lg shadow-lg">
             <div className="mb-4">
               <label
                 htmlFor="name"
@@ -68,7 +68,7 @@ function Contact() {
           </form>
 
           {/* Contact Information */}
-          <div className="bg-gray-50 p-4 md:p-8 rounded-lg shadow-lg flex flex-col justify-center">
+          <div className="bg-white p-4 md:p-8 lg:p-12 rounded-lg shadow-lg flex flex-col justify-center">
             <div className="rounded-xl overflow-hidden shadow-lg">
               <img
                 src="https://static1.anpoimages.com/wordpress/wp-content/uploads/2022/07/googleMapsTricksHero.jpg"

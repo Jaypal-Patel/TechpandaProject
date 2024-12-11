@@ -104,10 +104,9 @@ function Header() {
                 FREE TRIAL
               </button>
             </Link>
-            <Link>
-              <div className="bg-[#005CE6] py-[8px] px-3 rounded-lg">
-                <Link to={"/login"}>Login</Link>/
-                <Link to={"signup"}>Sign Up</Link>
+            <Link to={"/login"}>
+              <div className="bg-[#005CE6] text-white py-[8px] px-3 rounded-lg">
+                Login/Sign Up
               </div>
             </Link>
           </div>
@@ -125,7 +124,7 @@ function Header() {
 
       {/* Mobile Navbar */}
       <div
-        className={`lg:hidden fixed top-0 pt-[50px] left-0 right-0 w-full z-40 bg-[#0D1B2A] text-white transition-transform duration-500 ${
+        className={`lg:hidden fixed top-0 pt-[60px] left-0 right-0 w-full z-40 bg-[#0D1B2A] text-white transition-transform duration-500 ${
           menu ? "translate-y-0" : "-translate-y-full"
         }`}
       >
@@ -135,10 +134,9 @@ function Header() {
               FREE TRIAL
             </button>
           </Link>
-          <Link>
-            <div className="bg-[#005CE6] py-[8px] px-3 rounded-lg">
-              <Link to={"/login"}>Login</Link>/
-              <Link to={"signup"}>Sign Up</Link>
+          <Link to={"/login"}>
+            <div className="bg-[#005CE6] text-white py-[8px] px-3 rounded-lg">
+              Login/Sign Up
             </div>
           </Link>
         </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Login() {
   return (
@@ -11,7 +12,7 @@ function Login() {
               Email
             </label>
             <input
-              className="w-full mb-2 border outline-none py-2 px-2 rounded-md"
+              className="w-full mb-2 border focus:outline-none focus:ring-2 focus:ring-gray-500 py-2 px-2 rounded-md "
               placeholder="Email"
               name="email"
               id="email"
@@ -22,7 +23,7 @@ function Login() {
               Password
             </label>
             <input
-              className="w-full mb-6 border outline-none py-2 px-2 rounded-md"
+              className="w-full mb-6 border focus:outline-none focus:ring-2 focus:ring-gray-500 py-2 px-2 rounded-md"
               placeholder="Password"
               name="password"
               id="password"
@@ -33,6 +34,23 @@ function Login() {
               Login
             </button>
           </div>
+          <p className="text-sm mt-3 text-center font-medium">
+            Forgot{" "}
+            <a className="text-blue-600" href="#">
+              Username
+            </a>{" "}
+            /{" "}
+            <a className="text-blue-600" href="#">
+              Password
+            </a>{" "}
+            ?
+          </p>
+          <p className="text-sm text-center font-medium">
+            Don't have an account?{" "}
+            <Link to={"/signup"} className="text-blue-600">
+              Sing Up
+            </Link>
+          </p>
         </form>
       </div>
     </div>
